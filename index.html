@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spelling Numbers in Armenian</title>
+
+	<link rel="icon" href="/assets/favicon.png">
+</head>
+<body>
+
+	<main>
+		<h1>Spelling Numbers in Armenian</h1>
+
+		<input type="text" id="input" class="input">
+
+		<span id="output" class="output armenian"></span>
+		<span id="output-latin" class="output"></span>
+		<button class="spell">Spell</button>
+
+		<p class="info">
+			<span>The largest allowed number is <code>10^31-1</code> containing 31 digits (nines).</span>
+			<span><code>. , - _</code> characters are ignored.</span>
+		</p>
+	</main>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			const input = document.getElementById('input')
+
+			const display = (num) => {
+				document.getElementById('output').innerText = Speller.spell(num)
+				document.getElementById('output-latin').innerText = Speller.spell(num, 'latin')
+			}
+
+			const spellButton = document.querySelector('.spell')
+			spellButton.addEventListener('click', () => display(input.value || 0))
+
+			display(13700000000)
+			input.value = 13700000000
+			input.focus()
+		})
+	</script>
+	<script src="./speller.js"></script>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		@font-face {
+			font-family: 'Grapalat';
+			src: url('/assets/font/GHEAGrpalatReg.otf');
+			font-weight: normal;
+			font-style: normal;
+		}
+		body {
+			color: #fff;
+			background-color: #0b171c;
+		}
+		main {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			max-width: 75rem;
+			margin: 0 auto;
+			padding: 1rem;
+		}
+		.input,
+		.output {
+			display: block;
+			width: 100%;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			padding: 1rem;
+			border: 1px solid #e4eff8;
+			border-radius: 4px;
+		}
+		.input {
+			font-size: 1.2rem;
+			font-weight: 700;
+			color: inherit;
+			background-color: transparent;
+		}
+		.output {
+			line-height: 1.6;
+		}
+		.armenian {
+			font-family: Grapalat, sans-serif;
+		}
+		.spell {
+			padding: 1rem 3rem;
+			font-size: 1.2rem;
+			font-weight: 700;
+			background-color: #57b6df;
+			border: 1px solid #57b6df;
+			border-radius: 4px;
+		}
+		.info {
+			text-align: right;
+			font-size: 0.85rem;
+		}
+		code {
+			padding: 2px 4px;
+			background-color: #193541;
+			border-radius: 3px;
+		}
+	</style>
+</body>
+</html>
