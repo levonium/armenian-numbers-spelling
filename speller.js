@@ -21,7 +21,7 @@ const Speller = {
       6: 'ՎԱԹՍՈՒՆ',
       7: 'ՅՈԹԱՆԱՍՈՒՆ',
       8: 'ՈՒԹՍՈՒՆ',
-      9: 'ԻՆԻՍՈՒՆ',
+      9: 'ԻՆՆՍՈՒՆ',
     },
     HUNDRED: 'ՀԱՐՅՈՒՐ',
     THOUSANDS: {
@@ -59,7 +59,7 @@ const Speller = {
       6: "VATS'SUN",
       7: "YOT'ANASUN",
       8: "UT'SUN",
-      9: "INISUN",
+      9: "INNSUN",
     },
     HUNDRED: "HARYUR",
     THOUSANDS: {
