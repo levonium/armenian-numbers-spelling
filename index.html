@@ -29,6 +29,10 @@
 		window.addEventListener('DOMContentLoaded', () => {
 			const input = document.getElementById('input')
 
+			input.addEventListener('blur', (e) => {
+				input.value = input.value.replace(/\D/gm, "") || 0
+			})
+
 			const display = (num) => {
 				document.getElementById('output').innerText = Speller.spell(num)
 				document.getElementById('output-latin').innerText = Speller.spell(num, 'latin')
